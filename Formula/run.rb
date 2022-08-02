@@ -5,20 +5,20 @@
 class Run < Formula
   desc ""
   homepage "https://katallaxie.github.io/run/"
-  version "0.1.0-beta.2"
+  version "0.1.0-beta.3"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/katallaxie/run/releases/download/v0.1.0-beta.2/run_0.1.0-beta.2_darwin_arm64.tar.gz"
-      sha256 "4c7e0682a3529b2252b7aec62a5ff413fb38ee7ff6813483aa4ac7eeb378d30b"
+      url "https://github.com/katallaxie/run/releases/download/v0.1.0-beta.3/run_0.1.0-beta.3_darwin_arm64.tar.gz"
+      sha256 "af2e5c07d698dda23ad8014af23128bf2c15059664fb8d2f52fab904a1abb8b8"
 
       def install
         bin.install "run"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/katallaxie/run/releases/download/v0.1.0-beta.2/run_0.1.0-beta.2_darwin_amd64.tar.gz"
-      sha256 "a04361e4ed85de896bf454ae4140695b7c0d922fa397260434dca1493566431f"
+      url "https://github.com/katallaxie/run/releases/download/v0.1.0-beta.3/run_0.1.0-beta.3_darwin_amd64.tar.gz"
+      sha256 "04767a0f91aaffc7646747ddef383539f3467424ec510a8442e70125adeb252c"
 
       def install
         bin.install "run"
@@ -27,17 +27,17 @@ class Run < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/katallaxie/run/releases/download/v0.1.0-beta.2/run_0.1.0-beta.2_linux_amd64.tar.gz"
-      sha256 "ca75de8e8860073497ca2662beed40501a7a7c67b5e689c52b6e81ccc55c6cd9"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/katallaxie/run/releases/download/v0.1.0-beta.3/run_0.1.0-beta.3_linux_arm64.tar.gz"
+      sha256 "02bca3f27e964810394a130b45b3a95cde4798e81d6e716551e3b54c8ca39b2d"
 
       def install
         bin.install "run"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/katallaxie/run/releases/download/v0.1.0-beta.2/run_0.1.0-beta.2_linux_arm64.tar.gz"
-      sha256 "dd1e0e8844bf64c16fc2d94646db16e63048a3ddb47467dfeab548c8a43b3e3b"
+    if Hardware::CPU.intel?
+      url "https://github.com/katallaxie/run/releases/download/v0.1.0-beta.3/run_0.1.0-beta.3_linux_amd64.tar.gz"
+      sha256 "ec85dab1ce569facf83b64961263f5d3b96866b33701fb4e71a601c569297492"
 
       def install
         bin.install "run"
